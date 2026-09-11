@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Порядок служения · 6 сентября 2026</title>
+<style>
+  :root{
+    --bg:#faf9f7;
+    --card:#ffffff;
+    --ink:#1f2321;
+    --muted:#6b7168;
+    --accent:#8a6d3b;
+    --line:#e7e3db;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    padding:24px 16px 60px;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+  .date{color:var(--muted);font-size:14px;margin-bottom:4px;}
+  h1{font-size:28px;margin:0 0 8px;}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:28px;}
+  .summary{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:16px 20px;margin-bottom:24px;
+  }
+  .summary div{font-size:13px;color:var(--muted);}
+  .summary strong{display:block;font-size:20px;color:var(--ink);font-weight:600;}
+  .arrow{color:var(--accent);font-size:18px;}
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{
+    content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+    background:var(--line);
+  }
+  .item{position:relative;margin-bottom:22px;}
+  .item::before{
+    content:"";position:absolute;left:-28px;top:4px;width:12px;height:12px;
+    border-radius:50%;background:var(--accent);border:3px solid var(--bg);
+  }
+  .time{font-weight:700;font-size:15px;color:var(--accent);margin-bottom:2px;}
+  .title{font-weight:600;font-size:16px;}
+  .who{color:var(--muted);font-size:14px;margin-top:2px;}
+  .sub-list{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:14px;}
+  .note{
+    margin-top:6px;font-size:13px;color:var(--accent);
+    background:#fdf6ec;border:1px solid #f0e2c6;border-radius:8px;padding:6px 10px;display:inline-block;
+  }
+  .block{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;margin-bottom:22px;
+  }
+  .block .sub-list{margin-top:8px;}
+  .footer-note{
+    margin-top:32px;color:var(--muted);font-size:13px;text-align:center;
+  }
+  .announce-btn{
+    display:block;width:100%;margin-bottom:24px;padding:14px 20px;
+    background:var(--accent);color:#fff;border:none;border-radius:12px;
+    font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;
+  }
+  .announce-btn:hover{opacity:0.92;}
+  .announcements{
+    display:none;margin-top:20px;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px;
+  }
+  .announcements.open{display:block;}
+  .announcements h2{font-size:20px;margin:0 0 8px;}
+  .ann-lead{color:var(--muted);font-size:14px;margin-bottom:16px;}
+  .announcements h3{font-size:15px;margin:0 0 12px;color:var(--accent);}
+  .ann-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .ann-item:last-of-type{border-bottom:none;}
+  .ann-when{font-size:13px;color:var(--accent);font-weight:700;}
+  .ann-title{font-size:15px;font-weight:600;margin-top:2px;}
+  .ann-desc{font-size:13px;color:var(--muted);margin-top:2px;}
+  .ann-note{font-size:13px;color:var(--muted);margin-top:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="date">6 сентября 2026 · воскресенье</div>
+  <h1>Порядок служения</h1>
+  <div class="sub">Хронометраж для команды прославления и ведущих. Время ориентировочное — сверяйтесь по ходу программы.</div>
+
+  <div class="summary">
+    <div>Сбор команды<strong>10:30</strong></div>
+    <div class="arrow">→</div>
+    <div>Завершение<strong>~13:00</strong></div>
+  </div>
+
+  <button id="toggleBtn" class="announce-btn" onclick="toggleView()">Объявления</button>
+
+  <div id="timeline" class="timeline">
+
+    <div class="item">
+      <div class="time">10:30</div>
+      <div class="title">Конец репетиций</div>
+      <div class="who">Включаются песни — фон в зале до начала.</div>
+    </div>
+
+    <div class="item">
+      <div class="time">10:45</div>
+      <div class="title">Обратный таймер</div>
+    </div>
+
+    <div class="item">
+      <div class="time">11:00</div>
+      <div class="title">Вступление</div>
+      <div class="who">Группа прославления</div>
+    </div>
+
+    <div class="item">
+      <div class="time">11:30</div>
+      <div class="title">Молитва</div>
+      <div class="who">Юдицкий Михаил</div>
+    </div>
+
+    <div class="item">
+      <div class="time">11:35</div>
+      <div class="title">Поэтическое служение</div>
+      <ol class="sub-list">
+        <li>Дети (Дима, Ваня, Илья)</li>
+        <li>Мария Карабан</li>
+      </ol>
+    </div>
+
+    <div class="item">
+      <div class="time">11:45</div>
+      <div class="title">Приветствие гостей</div>
+      <div class="who">Шилина Дарья</div>
+    </div>
+
+    <div class="item">
+      <div class="time">11:50</div>
+      <div class="title">Проповедь</div>
+      <div class="who">Дарья Шилина — 20 мин</div>
+    </div>
+
+    <div class="item">
+      <div class="time">12:10</div>
+      <div class="title">Проповедь</div>
+      <div class="who">Юдицкий Михаил — 25 мин</div>
+    </div>
+
+    <div class="item">
+      <div class="time">12:35</div>
+      <div class="title">Служебный блок</div>
+      <ul class="sub-list">
+        <li>Призыв к покаянию</li>
+        <li>Сбор десятин</li>
+        <li>Молитва за нужды</li>
+        <li>Молитва за пастора</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="time">12:40</div>
+      <div class="title">Объявления и завершение</div>
+      <div class="who">Команда news</div>
+    </div>
+
+    <div class="item">
+      <div class="time">12:50</div>
+      <div class="title">Окончание служения</div>
+    </div>
+
+  </div>
+
+  <div id="announcements" class="announcements">
+    <h2>Объявления недели</h2>
+    <p class="ann-lead">Дорогие братья и сёстры! Основные события и объявления предстоящей недели.</p>
+
+    <h3>Расписание служений</h3>
+
+    <div class="ann-item">
+      <div class="ann-when">Сегодня</div>
+      <div class="ann-title">Сестринская молитва</div>
+      <div class="ann-desc">Сразу после служения.</div>
+    </div>
+
+    <div class="ann-item">
+      <div class="ann-when">Сегодня · 17:00</div>
+      <div class="ann-title">Молодёжное служение</div>
+    </div>
+
+    <div class="ann-item">
+      <div class="ann-when">Чт · 18:00</div>
+      <div class="ann-title">Вечернее богослужение</div>
+    </div>
+
+    <div class="ann-item">
+      <div class="ann-when">Сб · 15:30</div>
+      <div class="ann-title">Подростковое служение</div>
+    </div>
+
+    <div class="ann-item">
+      <div class="ann-when">Вс · 10:30 / 11:00</div>
+      <div class="ann-title">Богослужение</div>
+      <div class="ann-desc">10:30 — чай и общение, 11:00 — начало служения.</div>
+    </div>
+
+    <p class="ann-note">Ко всем братьям и сёстрам: не спешите расходиться сразу после богослужения. Останьтесь на чаепитие, познакомьтесь с теми, кого ещё не знаете, поддержите новых людей добрым словом. Пусть каждый почувствует себя частью большой Божьей семьи.</p>
+
+    <p class="ann-note">Хотите участвовать в каком-либо служении в церкви? Подойдите к диаконам — Михаилу или Евгению, или к брату Александру Жилачу.</p>
+
+    <p class="ann-note">Благословенной всем недели! До встречи в наш следующий раз 🙏</p>
+  </div>
+
+  <div class="footer-note" id="footerNote">Актуальную версию хронометража уточняйте у координатора служения.</div>
+</div>
+<script>
+  function toggleView(){
+    var tl = document.getElementById('timeline');
+    var ann = document.getElementById('announcements');
+    var fn = document.getElementById('footerNote');
+    var btn = document.getElementById('toggleBtn');
+    var showingAnn = ann.classList.contains('open');
+    if(showingAnn){
+      ann.classList.remove('open');
+      tl.style.display = '';
+      fn.style.display = '';
+      btn.textContent = 'Объявления';
+    } else {
+      ann.classList.add('open');
+      tl.style.display = 'none';
+      fn.style.display = 'none';
+      btn.textContent = 'Порядок служения';
+    }
+  }
+</script>
+</body>
+</html>
